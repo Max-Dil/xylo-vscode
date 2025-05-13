@@ -1,12 +1,17 @@
 {
-  "name": "xylo-vscode",
+  "displayName": "Xylo Pro Language Support",
+  "name": "stimor-xylo-language-pro",
   "activationEvents": ["*"],
-  "displayName": "Xylo Language Support",
   "description": "Syntax highlighting and linting for Xylo",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.87.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Max-Dil/xylo-vscode"
+  },
+  "publisher": "Stimor",
   "categories": [
     "Programming Languages"
   ],
