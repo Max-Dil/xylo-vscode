@@ -1,0 +1,39 @@
+{
+  "name": "xylo-vscode",
+  "activationEvents": ["*"],
+  "displayName": "Xylo Language Support",
+  "description": "Syntax highlighting and linting for Xylo",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "xylo",
+        "aliases": ["Xylo", "xylo"],
+        "extensions": [".xylo"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "xylo",
+        "scopeName": "source.xylo",
+        "path": "./syntaxes/xylo.tmLanguage.json"
+      }
+    ]
+  },
+  "main": "./extension.js",
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "vscode": "^1.87.0"
+  }
+}

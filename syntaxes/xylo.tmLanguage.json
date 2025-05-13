@@ -1,0 +1,88 @@
+{
+  "scopeName": "source.xylo",
+  "name": "Xylo",
+  "fileTypes": ["xylo"],
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#keywords" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#operators" },
+    { "include": "#functions" },
+    { "include": "#variables" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.xylo",
+          "match": "--.*$|//.*$"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.xylo",
+          "match": "\\b(if|else|while|for|do|end|break|return|local|function|fun|require|class|extends|static|private|public|init|switch|case|try|catch|default)\\b"
+        },
+        {
+          "name": "keyword.type.xylo",
+          "match": "\\b(number|string|boolean|table|null|undefined|global)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.xylo",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            { "match": "\\\\.", "name": "constant.character.escape.xylo" }
+          ]
+        },
+        {
+          "name": "string.quoted.single.xylo",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            { "match": "\\\\.", "name": "constant.character.escape.xylo" }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.xylo",
+          "match": "\\b\\d+(\\.\\d+)?\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.xylo",
+          "match": "\\+|-|\\*|/|%|\\^|==|!=|~=|<|>|<=|>=|\\.\\.|&&|\\|\\||and|or|not"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "entity.name.function.xylo",
+          "match": "\\b(pcall|xpcall|assert|error|tonumber|tostring|type|warn|len|ipairs|pairs|next|print|await|loadstring|setenv|awaitListener)\\b"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.xylo",
+          "match": "\\b[a-zA-Zа-яА-ЯёЁ_][a-zA-Zа-яА-ЯёЁ0-9_]*\\b"
+        }
+      ]
+    }
+  }
+}
